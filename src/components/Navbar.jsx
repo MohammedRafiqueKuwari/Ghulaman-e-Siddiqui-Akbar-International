@@ -42,7 +42,7 @@ export default function Layout() {
       {/* Sidebar for desktop and mobile */}
       <aside className={`fixed z-40 top-0 left-0 h-screen w-60 bg-[#2E5A50] overflow-y-auto border-r border-[#B89729] transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
         <div className="px-6 py-6 cursor-pointer text-center" onClick={() => handleClick("home")}>
-          <img src="asset/logo.jpeg" alt="Logo" className="w-24 h-24 mx-auto rounded-full" />
+          <img src="assets/logo.jpeg" alt="Logo" className="w-24 h-24 mx-auto rounded-full" />
           <span className="block text-lg font-bold mt-2 text-[#D4AF37]">Ghulaman e Siddiqui Akbar International</span>
         </div>
         <nav className="flex flex-col space-y-1 px-4">
@@ -71,7 +71,7 @@ export default function Layout() {
         {!open && (
           <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2E5A50] text-white h-[70px] flex items-center px-4 justify-between shadow-md">
             <div onClick={() => handleClick("home")} className="flex items-center gap-2">
-              <img src="asset/logo.jpeg" alt="Logo" className="w-10 h-10 rounded-full" />
+              <img src="assets/logo.jpeg" alt="Logo" className="w-10 h-10 rounded-full" />
               <span className="font-bold text-[#D4AF37]">Ghulaman e Siddiqui Akbar International</span>
             </div>
             <button onClick={() => setOpen((prev) => !prev)} aria-label="Toggle Menu">
