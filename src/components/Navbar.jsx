@@ -67,20 +67,23 @@ export default function Layout() {
 
       {/* Main content area */}
       <div className="flex-1 flex flex-col md:ml-60">
-        {/* Top navbar (mobile only) */}
-        <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2E5A50] text-white h-[70px] flex items-center px-4 justify-between shadow-md">
-          <div onClick={() => handleClick("home")} className="flex items-center gap-2">
-            <img src="asset/logo.jpeg" alt="Logo" className="w-10 h-10 rounded-full" />
-            <span className="font-bold text-[#D4AF37]">Ghulaman e Siddiqui Akbar International</span>
-          </div>
-          <button onClick={() => setOpen((prev) => !prev)} aria-label="Toggle Menu">
-            <div className="w-6 h-6 relative">
-              <span className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${open ? "rotate-45 top-2.5" : "top-1"}`} />
-              <span className={`block absolute h-0.5 w-6 bg-white transition-opacity duration-300 ease-in-out ${open ? "opacity-0" : "top-3"}`} />
-              <span className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${open ? "-rotate-45 top-2.5" : "top-5"}`} />
+        {/* Top navbar (mobile only) - hidden when sidebar is open */}
+        {!open && (
+          <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2E5A50] text-white h-[70px] flex items-center px-4 justify-between shadow-md">
+            <div onClick={() => handleClick("home")} className="flex items-center gap-2">
+              <img src="asset/logo.jpeg" alt="Logo" className="w-10 h-10 rounded-full" />
+              <span className="font-bold text-[#D4AF37]">Ghulaman e Siddiqui Akbar International</span>
             </div>
-          </button>
-        </nav>
+            <button onClick={() => setOpen((prev) => !prev)} aria-label="Toggle Menu">
+              <div className="w-6 h-6 relative">
+                <span className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${open ? "rotate-45 top-2.5" : "top-1"}`} />
+                <span className={`block absolute h-0.5 w-6 bg-white transition-opacity duration-300 ease-in-out ${open ? "opacity-0" : "top-3"}`} />
+                <span className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${open ? "-rotate-45 top-2.5" : "top-5"}`} />
+              </div>
+            </button>
+          </nav>
+        )}
+
 
         {/* Content area */}
         <main
@@ -106,7 +109,6 @@ export default function Layout() {
             );
           })}
         </main>
-
 
       </div>
     </div>

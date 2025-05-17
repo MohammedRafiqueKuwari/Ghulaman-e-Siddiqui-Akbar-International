@@ -16,7 +16,7 @@ const SplashScreen = ({ onFinish }) => {
         setVisible(false);
         onFinish();
       }, 1000);
-    }, 11000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [onFinish]);
