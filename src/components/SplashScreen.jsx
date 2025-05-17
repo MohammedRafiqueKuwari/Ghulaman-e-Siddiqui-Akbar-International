@@ -37,7 +37,7 @@ const SplashScreen = ({ onFinish }) => {
         muted
         playsInline
       >
-        <source src="assets/VID-20241203-WA0006.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}assets/VID-20241203-WA0006.mp4`} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
