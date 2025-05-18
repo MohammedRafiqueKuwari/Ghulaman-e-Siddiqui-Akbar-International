@@ -1,23 +1,45 @@
 import React, { useState, useEffect } from "react";
 
+
+// Import all section components
+import Home from "./Home";
+import AlQuran from "./AlQuran";
+import Media from "./Media";
+import Library from "./Library";
+import Sisters from "./Sisters";
+import KidsCorner from "./KidsCorner";
+import Event from "./Event";
+import NerianSharif from "./NerianSharif";
+import Khawjgan from "./Khawjgan";
+import Footer from "./Footer";
+import Huzoor from "./Huzoor";
+import GoldenChain from "./GoldenChain";
+import Pillars from "./Pillars";
+import News from "./News";
+import Membership from "./Membership";
+import Bayat from "./Bayat";
+import Khatam from "./Khatam";
+import Learn from "./Learn";
+
+
 const sections = [
   "Home",
   "Al Quran",
   "Media",
   "Library",
-  "Sisters Section",
+  "Sisters",
   "Kids Corner",
   "Event",
   "Nerian Sharif",
-  "Khawjgan e Nerian Shareef",
-  "Huzoor Shaykh ul Alam",
+  "Khawjgan",
+  "Huzoor",
   "Golden Chain",
-  "5 Pillars of Islam",
-  "News and Updates",
+  "Pillars",
+  "News",
   "Membership",
   "Bayat",
-  "Khatam e Khawjgan Shareef",
-  "Learn Quran and Hadith",
+  "Khatam",
+  "Learn",
 ];
 
 export default function Layout() {
@@ -71,7 +93,7 @@ export default function Layout() {
         {!open && (
           <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2E5A50] text-white h-[70px] flex items-center px-4 justify-between shadow-md">
             <div onClick={() => handleClick("home")} className="flex items-center gap-2">
-              <img src={`${import.meta.env.BASE_URL}assets/logo.jpeg`}  alt="Logo" className="w-10 h-10 rounded-full" />
+              <img src={`${import.meta.env.BASE_URL}assets/logo.jpeg`} alt="Logo" className="w-10 h-10 rounded-full" />
               <span className="font-bold text-[#D4AF37]">Ghulaman e Siddiqui Akbar International</span>
             </div>
             <button onClick={() => setOpen((prev) => !prev)} aria-label="Toggle Menu">
@@ -86,9 +108,7 @@ export default function Layout() {
 
 
         {/* Content area */}
-        <main
-          id="main-content"
-          className="pt-[90px] md:pt-6 px-4 md:px-6 overflow-auto"
+        <main id="main-content" className="pt-[90px] md:pt-6 px-4 md:px-6 overflow-auto"
           style={{
             minHeight: "100vh",
             background: "linear-gradient(to bottom, #1A3C34, #ffffff)",
@@ -96,19 +116,25 @@ export default function Layout() {
             boxShadow: "0 0 10px rgba(0,0,0,0.1)"
           }}
         >
-          {sections.map((section) => {
-            const id = section.toLowerCase().replace(/\s+/g, "-");
-            if (id !== activeSection) return null;
-            return (
-              <section key={section} className="py-6 text-[#D4AF37]">
-                <h2 className="text-2xl font-bold text-[#D4AF37] mb-4">{section}</h2>
-                <p className="text-base leading-relaxed">
-                  This is the <strong>{section}</strong> section. Content goes here.
-                </p>
-              </section>
-            );
-          })}
+          {activeSection === "home" && <Home />}
+          {activeSection === "al-quran" && <AlQuran />}
+          {activeSection === "media" && <Media />}
+          {activeSection === "library" && <Library />}
+          {activeSection === "sisters" && <Sisters />}
+          {activeSection === "kids-corner" && <KidsCorner />}
+          {activeSection === "event" && <Event />}
+          {activeSection === "nerian-sharif" && <NerianSharif />}
+          {activeSection === "khawjgan" && <Khawjgan />}
+          {activeSection === "huzoor" && <Huzoor />}
+          {activeSection === "golden-chain" && <GoldenChain />}
+          {activeSection === "pillars" && <Pillars />}
+          {activeSection === "news" && <News/>}
+          {activeSection === "membership" && <Membership />}
+          {activeSection === "bayat" && <Bayat />}
+          {activeSection === "khatam" && <Khatam/>}
+          {activeSection === "learn" && <Learn/>}
         </main>
+
 
       </div>
     </div>
