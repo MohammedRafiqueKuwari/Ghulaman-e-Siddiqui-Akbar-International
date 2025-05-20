@@ -20,6 +20,8 @@ import Membership from "./Membership";
 import Bayat from "./Bayat";
 import Khatam from "./Khatam";
 import Learn from "./Learn";
+import About from "./about";
+
 
 
 const sections = [
@@ -40,6 +42,7 @@ const sections = [
   "Bayat",
   "Khatam",
   "Learn",
+  "About us"
 ];
 
 export default function Layout() {
@@ -133,6 +136,8 @@ export default function Layout() {
           {activeSection === "bayat" && <Bayat />}
           {activeSection === "khatam" && <Khatam/>}
           {activeSection === "learn" && <Learn/>}
+          {activeSection === "about" && <About />}
+
         </main>
 
 
