@@ -15,27 +15,27 @@ export default function KhwajaGhulamMohiuddinGhaznavi() {
 
   return (
     <div className="text-white space-y-6 px-4 py-6">
-      <h1 className="text-3xl font-bold mb-6">
+      <h1 className="text-3xl font-bold mb-6"style={{ color: '#D4AF37' }}>
         Khwaja Ghulam Mohiuddin Ghaznavi
       </h1>
 
       {subtopics.map((item, index) => (
         <section
           key={index}
-          className="border border-yellow-500 rounded-md p-4 bg-gray-900"
+          className="border border-yellow-500 rounded-md p-4 bg-gray-900 text-[#D4AF37]"
         >
           <button
             onClick={() => toggleIndex(index)}
-            className="text-left w-full flex justify-between items-center text-xl font-semibold focus:outline-none"
+            className="text-left w-full flex justify-between items-center text-xl font-semibold focus:outline-none text-[#D4AF37]"
           >
             <span>{item.title}</span>
-            <span className="text-yellow-400">
+            <span className="text-[#D4AF37]">
               {openIndexes.includes(index) ? "▲" : "▼"}
             </span>
           </button>
 
           {openIndexes.includes(index) && (
-            <p className="text-gray-300 mt-3 whitespace-pre-line">{item.content}</p>
+            <p className="text-[#D4AF37] mt-3 whitespace-pre-line">{item.content}</p>
           )}
         </section>
       ))}

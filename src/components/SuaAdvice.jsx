@@ -43,9 +43,9 @@ export default function SuaAdvice() {
   };
 
   return (
-    <section id="event" className="min-h-screen pt-24 px-4 bg-white">
+    <section id="event" className="min-h-screen pt-24 px-4 ">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12" style={{ color: '#1A3C34' }}>
+        <h2 className="text-4xl font-bold text-center mb-12" style={{ color: '#D4AF37' }}>
           Shaykh ul Aalam’s Advice for the Seeker
         </h2>
         {isLoading && <p className="text-center text-gray-600">Loading advice...</p>}
@@ -58,21 +58,21 @@ export default function SuaAdvice() {
             {adviceData.map((advice, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg border"
-                style={{ borderColor: '#2E5A50' }}
+                className="border border-yellow-500 rounded-md p-4 bg-gray-900"
+                
               >
                 {/* Title as clickable dropdown toggle */}
                 <button
                   onClick={() => toggleDropdown(index)}
-                  className="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none"
-                  style={{ color: '#1A3C34' }}
+                  className="text-left w-full flex justify-between items-center text-xl font-semibold focus:outline-none"
+                  style={{ color: '#D4AF37' }}
                   aria-expanded={activeIndex === index}
                   aria-controls={`content-${index}`}
                 >
-                  <h3 className="text-xl font-semibold">
+                  <h3 className="text-xl font-semibold"style={{ color: '#D4AF37' }}>
                     {advice.title || 'Untitled'}
                   </h3>
-                  <span className="text-2xl">
+                  <span className="text-2xl" style={{ color: '#D4AF37' }}>
                     {activeIndex === index ? (
                       <svg
                         className="w-5 h-5"
@@ -112,7 +112,7 @@ export default function SuaAdvice() {
                     id={`content-${index}`}
                     className="px-6 py-4 transition-all duration-300 ease-in-out"
                   >
-                    <div className="text-sm mb-4" style={{ color: '#2E5A50' }}>
+                    <div className="text-sm mb-4" style={{ color: '#D4AF37' }}>
                       <p>
                         <span className="font-medium">Hijri Date:</span>{' '}
                         {advice.dateHijri || 'Not specified'}
@@ -123,7 +123,7 @@ export default function SuaAdvice() {
                       </p>
                     </div>
                     <div
-                      className="text-gray-700 mb-4"
+                      className="text-[#D4AF37] mb-4"
                       dangerouslySetInnerHTML={{
                         __html: (advice.content || 'No content available').replace(/\n/g, '<br />'),
                       }}

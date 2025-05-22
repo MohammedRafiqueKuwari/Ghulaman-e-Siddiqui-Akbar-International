@@ -22,6 +22,7 @@ import Learn from "./Learn";
 import About from "./about";
 import KhwajaGhulamMohiuddinGhaznavi from "./KhwajaGhulamMohiuddinGhaznavi";
 import SuaAdvice from "./SuaAdvice"; // Added .js extension
+import BabaJiSarkar from "./BabaJiSarkar";
 
 const sections = [
   "Home",
@@ -44,6 +45,7 @@ const sections = [
   "About us",
   "Khwaja Ghulam Mohiuddin Ghaznavi",
   "Shaykh ul Aalam’s Advice for the Seeker",
+  "Baba Ji Sarkar (RA)",
 ];
 
 export default function Layout() {
@@ -183,6 +185,7 @@ export default function Layout() {
           {activeSection === "shaykh-ul-aalam’s-advice-for-the-seeker" && (
             <SuaAdvice />
           )}
+          {activeSection === "baba-ji-sarkar-(ra)" && <BabaJiSarkar />}
         </main>
       </div>
     </div>
